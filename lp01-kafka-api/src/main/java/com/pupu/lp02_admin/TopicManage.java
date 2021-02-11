@@ -1,4 +1,4 @@
-package com.pupu.admin;
+package com.pupu.lp02_admin;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -21,7 +21,7 @@ public class TopicManage {
      * @param topicNames topic名称的集合
      */
     public static void createTopic(List<String> topicNames) throws Exception {
-        // 创建AdminClient客户端对象
+        //1. 创建AdminClient客户端对象
         AdminClient adminClient = AdminClientFactory.createAdminClientByMap();
 
         List<NewTopic> topicList = Lists.newArrayList();
@@ -72,20 +72,20 @@ public class TopicManage {
      * 如：__consumer_offsets，internal=true
      */
     public static void listTopicsWithOptions() throws Exception {
-        // 创建AdminClient客户端对象
+        //1. 创建AdminClient客户端对象
         AdminClient adminClient = AdminClientFactory.createAdminClientByProperties();
 
         ListTopicsOptions options = new ListTopicsOptions();
-        // 列出内部的Topic
+        //2. 列出内部的Topic
         options.listInternal(true);
 
-        // 列出所有的topic
+        //3. 列出所有的topic
         ListTopicsResult result = adminClient.listTopics(options);
 
-        // 获取所有topic的名字，返回的是一个Set集合
+        //4. 获取所有topic的名字，返回的是一个Set集合
         Set<String> topicNames = result.names().get();
 
-        // 打印所有topic的名字
+        //5. 打印所有topic的名字
         topicNames.forEach(System.out::println);
 
         // 获取所有topic的信息，返回的是一个Collection集合

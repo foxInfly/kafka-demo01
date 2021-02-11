@@ -20,9 +20,9 @@ public class ConsumerHandAssignTest {
         props.put("bootstrap.servers","192.168.44.160:9092");
         props.put("group.id","gp-assgin-group-2");
         // 是否自动提交偏移量，只有commit之后才更新消费组的 offset
-        props.put("enable.auto.commit","true");
+        props.put("enable.auto.lp03_commit","true");
         // 消费者自动提交的间隔
-        props.put("auto.commit.interval.ms","1000");
+        props.put("auto.lp03_commit.interval.ms","1000");
         // 从最早的数据开始消费 earliest | latest | none
         props.put("auto.offset.reset","earliest");
         props.put("key.deserializer","org.apache.kafka.common.serialization.StringDeserializer");

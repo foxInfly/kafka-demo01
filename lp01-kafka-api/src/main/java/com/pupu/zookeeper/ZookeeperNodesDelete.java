@@ -30,7 +30,7 @@ public class ZookeeperNodesDelete {
         }
 
         try {
-            client.delete().deletingChildrenIfNeeded().forPath("/admin");
+            client.delete().deletingChildrenIfNeeded().forPath("/lp02_admin");
         }catch (Exception e){
 
         }

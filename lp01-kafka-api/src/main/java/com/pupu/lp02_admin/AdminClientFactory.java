@@ -1,4 +1,4 @@
-package com.pupu.admin;
+package com.pupu.lp02_admin;
 
 import com.google.common.collect.Maps;
 import org.apache.kafka.clients.admin.AdminClient;
@@ -23,7 +23,7 @@ public class AdminClientFactory {
         Properties prop = new Properties();
 
         // 配置Kafka服务的访问地址及端口号
-        prop.setProperty(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.44.160:9092");
+        prop.setProperty(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "121.37.227.17:9092");
         prop.setProperty(AdminClientConfig.REQUEST_TIMEOUT_MS_CONFIG,"20000");
         prop.setProperty(AdminClientConfig.RETRIES_CONFIG,"3");
 
@@ -39,7 +39,7 @@ public class AdminClientFactory {
         Map<String, Object> conf = Maps.newHashMap();
 
         // 配置Kafka服务的访问地址及端口号
-        conf.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.44.160:9092");
+        conf.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "121.37.227.17:9092");
 
         // 创建AdminClient实例
         return AdminClient.create(conf);

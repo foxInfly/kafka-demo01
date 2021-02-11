@@ -1,4 +1,4 @@
-package com.pupu.commit;
+package com.pupu.lp03_commit;
 
 
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -8,13 +8,15 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import java.util.Properties;
 
 /**
- * @author: qingshan
+ *
+ * @author lp
+ * @since  2021/2/11 17:52
  */
 public class CommitProducer {
     public static void main(String[] args) {
         Properties props=new Properties();
         //props.put("bootstrap.servers","192.168.44.161:9093,192.168.44.161:9094,192.168.44.161:9095");
-        props.put("bootstrap.servers","192.168.44.160:9092");
+        props.put("bootstrap.servers","121.37.227.17:9092");
         props.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer","org.apache.kafka.common.serialization.StringSerializer");
         // 0 发出去就确认 | 1 leader 落盘就确认| all 所有Follower同步完才确认
@@ -33,7 +35,7 @@ public class CommitProducer {
         Producer<String,String> producer = new KafkaProducer<String,String>(props);
 
         for (int i =0 ;i<100;i++) {
-            producer.send(new ProducerRecord<String,String>("commit-test",Integer.toString(i),Integer.toString(i)));
+            producer.send(new ProducerRecord<String,String>("lp03_commit-test",Integer.toString(i),Integer.toString(i)));
         }
 
 
