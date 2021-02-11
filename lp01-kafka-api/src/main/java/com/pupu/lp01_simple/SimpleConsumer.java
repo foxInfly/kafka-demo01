@@ -24,9 +24,9 @@ public class SimpleConsumer {
         //指定消费者组；同一时间，不会出现两个消费者消费同一个partition的情况
         props.put("group.id", "lp-test-group");
         // 是否自动提交偏移量，只有commit之后才更新消费组的 offset
-        props.put("enable.auto.lp03_commit", "true");
+        props.put("enable.auto.commit", "true");
         // 消费者自动提交的间隔
-        props.put("auto.lp03_commit.interval.ms", "1000");
+        props.put("auto.commit.interval.ms", "1000");
         // 从最早的数据开始消费 earliest | latest | none
         props.put("auto.offset.reset", "earliest");
         // 序列化方式，这里是字符串

@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>lp01-kafka-api</module>
+        <module>lp02-kafka-springboot</module>
     </modules>
 
 

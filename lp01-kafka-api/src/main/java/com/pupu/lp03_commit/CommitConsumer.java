@@ -23,9 +23,9 @@ public class CommitConsumer {
         props.put("bootstrap.servers","121.37.227.17:9092");
         props.put("group.id","gp-test-group1");
         // 是否自动提交偏移量，只有commit之后才更新消费组的 offset
-        props.put("enable.auto.lp03_commit","true");
+        props.put("enable.auto.commit","true");
         // 消费者自动提交的间隔，则是间隔多久提交一次
-        props.put("auto.lp03_commit.interval.ms","1000");
+        props.put("auto.commit.interval.ms","1000");
         // 从最早的数据开始消费 earliest | latest | none（如果服务端没有保存消费者和partition的关系，则会报错）
         props.put("auto.offset.reset","earliest");
         props.put("key.deserializer","org.apache.kafka.common.serialization.StringDeserializer");
