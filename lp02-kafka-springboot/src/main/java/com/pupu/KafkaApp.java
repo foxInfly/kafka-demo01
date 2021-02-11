@@ -4,7 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author: qingshan
+ *
+ * @author lp
+ * @since  2021/2/11 18:41
  */
 @SpringBootApplication
 public class KafkaApp {

@@ -1,6 +1,6 @@
 package com.pupu;
 
-import com.qingshan.producer.KafkaProducer;
+import com.pupu.producer.KafkaProducer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

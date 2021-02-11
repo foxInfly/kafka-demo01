@@ -6,13 +6,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.kafka.core.KafkaOperations;
 import org.springframework.kafka.core.KafkaTemplate;
 
+import javax.annotation.Resource;
+
 /**
  * @author qingshan
  */
 @SpringBootTest
 class KafkaTransactionTests {
 
-    @Autowired
+    @Resource
     private KafkaTemplate<String,Object> kafkaTemplate;
 
     // 消费者：先启动 kafkaApp
@@ -20,13 +22,10 @@ class KafkaTransactionTests {
     @Test
     void executeInTransaction() {
         long time = System.currentTimeMillis();
-        kafkaTemplate.executeInTransaction(new KafkaOperations.OperationsCallback() {
-            @Override
-            public Object doInOperations(KafkaOperations kafkaOperations) {
-                kafkaOperations.send("springboottopic", "test executeInTransaction");
-                // throw new RuntimeException("fail");
-                return true;
-            }
+        kafkaTemplate.executeInTransaction((KafkaOperations.OperationsCallback) kafkaOperations -> {
+            kafkaOperations.send("springboottopic", "test executeInTransaction");
+            // throw new RuntimeException("fail");
+            return true;
         });
     }
 

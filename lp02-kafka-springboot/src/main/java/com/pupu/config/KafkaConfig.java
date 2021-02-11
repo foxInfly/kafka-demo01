@@ -1,13 +1,25 @@
 package com.pupu.config;
 
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.common.serialization.StringSerializer;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.core.DefaultKafkaProducerFactory;
+import org.springframework.kafka.core.ProducerFactory;
+import org.springframework.kafka.transaction.KafkaTransactionManager;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- * @author: qingshan
+ *
+ * @author lp
+ * @since  2021/2/11 18:39
  */
 @Configuration
 public class KafkaConfig {
-/*    @Value("${spring.kafka.bootstrap-servers}")
+    @Value("${spring.kafka.bootstrap-servers}")
     private String servers;
     @Value("${spring.kafka.producer.retries}")
     private int retries;
@@ -45,5 +57,5 @@ public class KafkaConfig {
     public KafkaTransactionManager transactionManager() {
         KafkaTransactionManager manager = new KafkaTransactionManager(producerFactory());
         return manager;
-    }*/
+    }
 }
