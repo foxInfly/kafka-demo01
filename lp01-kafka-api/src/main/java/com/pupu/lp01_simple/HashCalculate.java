@@ -1,7 +1,10 @@
-package com.pupu.simple;
+package com.pupu.lp01_simple;
 
 /**
- * @author: qingshan
+ * 判断offset放在哪个分区存储
+ *
+ * @author lp
+ * @since 2021/2/11 15:55
  */
 public class HashCalculate {
     public static void main(String[] args) {
