@@ -34,7 +34,7 @@ public class CommitConsumer {
         KafkaConsumer<String,String> consumer=new KafkaConsumer<>(props);
 
         // 订阅 topic
-        consumer.subscribe(Arrays.asList("lp03_commit-test"));
+        consumer.subscribe(Arrays.asList("commit-test"));
 
         final int minBatchSize = 200;
         List<ConsumerRecord<String, String>> buffer = new ArrayList<>();
